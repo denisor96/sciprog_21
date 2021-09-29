@@ -1,0 +1,10 @@
+Git Assignment
+ Read SciProg Page on Github
+ICHEC Learn Sciprog learn repository
+Fork (top right)  -> select own account -> will have sciprog_21 repo on own account
+-> create personal access token -> profile -> settings -> developer settings -> person access tokens -> generate new token (own password) -> expiry to December -> tick [repo] -> tick[notifications] -> click [generate]
+copy the password (copy to sticker) -> 
+code -> copy link -> in ssh git clone {link] 
+-> git branch Denis_ORiordan_Brightspace
+marked on Git Branch
+git checkout Denis_O...
