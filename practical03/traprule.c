@@ -21,13 +21,21 @@ int main(void) {
    for (i=0; i<=12; i++) {
       x[i] = a + i*(b/12);
       y[i] = tan(x[i]);  
-      printf("\n x%d and y%.d are %.5f and %.5f \n", i, i ,  x[i], y[i]);  
-      sum =  sum + 2*(y[i]);
+      printf("\n x%d and y%.d are %.5f and %.5f \n", i, i ,  x[i], y[i]);
+   }
+/* Get 2* our y value from y[1] to y[11] */
+   for (i =1; i<=11; i++) {
+	y[i] = 2* y[i];
+   }
+
+/* Sum from i=0 to i=12 */
+   for (i=0; i<=12; i++) {
+	sum = sum + y[i];
    }
 
 /* 4. Get the correct result i.e. the log of two */
    N=12;
-   sum = sum*((b-a)/2*N);
+   sum = sum*((b-a)/(2*N));
    logtwo = log(2);
    diff = logtwo - sum;
 
