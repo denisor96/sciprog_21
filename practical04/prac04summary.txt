@@ -1,4 +1,0 @@
-Learnings from practical04/week4
-
-Developed sub-functions such as degtorad and traprule and incorporate them into the main function.
-Modified our trapezoidal rule function to allowing us to input our desired value of N before it is run.
