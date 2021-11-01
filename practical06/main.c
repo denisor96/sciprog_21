@@ -27,13 +27,19 @@ int main(){
                 C[i][j] = 0.0;
         }
   }
+
+
   
   //Matrix Multiplication
-  for (i=0 ; i<n ; i++)
+  matmult(n,p,q,A, B, C);
+
+/*  for (i=0 ; i<n ; i++)
         for( j=0 ; j < q ; j++)
                 for ( k=0 ; k < p ; j++)
 		C[i][j] = C[i][j] + A[i][k] + B[k][j];
-  
+ */ 
+
+
   //print the matrices
   printf("\n The matrix A is:\n");
   for (i=0 ; i<n ; i++){
