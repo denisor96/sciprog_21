@@ -10,37 +10,41 @@ double arctanh2( const double x);
 
 int main() {
 
-   // input delta, begin & end
-   // delta - a positive real number which will be used as the percision for the McLaurin Series
-   // begin, end - the range over x the hyperbolic arc tangent will be calculated
-   double delta ;
-   double begin, end;
+   // input delta - a positive real number which will be used as the percision for the McLaurin Series
+   double delta;
    printf("Enter precision for the Maclaurin Series:\n");
    scanf("%lf", &delta);
-   printf("Enter the start and finish points for x:\n");
-   scanf("%lf, %lf", &begin, &end);
+   
+   //define begining and end points for the functions as specified
+   double begin, end;
+   begin = -0.9;
+   end = 0.9;
 
    // define size of the arrays for where the tan values are calculated and stored during the loop
-   // fabs() due to possible negative value for x
-   // cast as integer and initialize arrays to store answers for both methods
-   double a =  ((fabs(begin) + fabs(end))/delta) + 1.;
-   int asize = a;
-   double tan1[asize];
-   double tan2[asize];
+   // size 180 as (0.9 + 0.9) / 0.01
+   double tan1[180], tan2[180];
+   double diff[180];
+
+   // initialize variables to use for difference and accuracy of methods
+   double sum_diff = 0.0, tan2_total = 0.0;
 
    //main component of loop, is double as begining and end values of x, delta are not int's
    double i;
    //index in array
    int j = 0;
-
-   // forloop: stores tan value in array (both methods) and prints difference for each iteration
-   for ( i = begin; i <= end;  i += delta) {
+   // forloop: stores tan value in array (both methods) and difference. prints difference for each iteration
+   for ( i = begin; i <= end + 0.01;  i += 0.01) {
      tan1[j] = arctanh1(i, delta);
      tan2[j] = arctanh2(i);
+     tan2_total = tan2_total + fabs(tan2[j]);
+     diff[j] = fabs(tan1[j] - tan2[j]);
+     sum_diff = sum_diff + diff[j];
      printf("The difference between tan1[%.3lf] and tan2[%.3lf] is %.10lf.\n", i, i , fabs(tan1[j] - tan2[j]));
      j++;
-
    }
+   // cumulative difference and accuracy of the MacLaurin Series
+   printf("The cumulative difference over the entire array is %.10lf.\n", sum_diff);
+   printf("The MacLaurin Series for a given precision of %.3lf is %.10lf %% accurate\n\n", delta, (tan2_total - sum_diff)*100/(tan2_total));
 
    return 0;
 }
