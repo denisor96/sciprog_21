@@ -10,6 +10,7 @@ int recursiveGCD(int a, int b);
 
 int main(void) {
 
+   //declare integers to be passed to both subfunctions
    int a,b;
 
    //Generate a,b randomly from 1 - 12
