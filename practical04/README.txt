@@ -23,12 +23,5 @@ prac04_part2.c
 - The main function prints the value of this area and compares it to the true value of the area using log(2).
  
 
-
-
-
-
-
-
-
 -----------------------------------------------------------------------------------------------------------------------------
 
