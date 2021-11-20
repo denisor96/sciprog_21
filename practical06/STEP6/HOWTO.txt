@@ -1,0 +1,2 @@
+1. Enter 'make' - this will run the Makefile
+2. Enter "./mmc" - mmc is the compliled output of the Makefile
