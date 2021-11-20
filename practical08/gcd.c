@@ -21,7 +21,7 @@ int main(void) {
    //Input desired values of a and b
    //exit program without calculating GCD if they are not both positive integere
    int error;
-   printf("\nPlease input two positive integers:\n");
+   printf("\nPlease input two positive integers, separated by a comma:\n");
    error = scanf("%d, %d",&a, &b);
    if (error != 2) {
 	printf("This is less than 1!\n");
